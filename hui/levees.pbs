@@ -1,0 +1,12 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=32,walltime=10:00:00 
+#PBS -l gres=ccm 
+#PBS -m abe 
+#PBS -o matlab_output 
+#PBS -e matlab_error 
+#PBS -q cpu
+
+module load matlab
+module load ccm
+cd /N/dc2/scratch/ndevadas/projects/hui
+ccmrun matlab -nodesktop < /N/dc2/scratch/ndevadas/projects/hui/levees6.m
